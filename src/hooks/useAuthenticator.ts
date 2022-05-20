@@ -6,7 +6,7 @@ export default async function useAuthenticator(
   res: Response,
   next: NextFunction
 ) {
-  const result = await fetch("http://localhost:3002/auth/validate", {
+  const result = await fetch(`${process.env.AUTH_SERVICE_URL}/auth/validate`, {
     method: "get",
     headers: req.headers,
   }).then((res) => {
